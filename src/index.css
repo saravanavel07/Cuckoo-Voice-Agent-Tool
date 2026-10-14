@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cuckoo-leaf: #65E62E;
+    --cuckoo-lime: #8AFF42;
+    --cuckoo-emerald: #159447;
+    --cuckoo-forest: #082D19;
+    --cuckoo-white: #F4FFF1;
+    --cuckoo-surface: #123D25;
+    --cuckoo-surface-hover: #174b2f;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #082D19;
+    color: #F4FFF1;
+    overflow-x: hidden;
+  }
+
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #082D19;
+}
+::-webkit-scrollbar-thumb {
+  background: #159447;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #65E62E;
+}
+
+/* Subtle glow animations */
+@keyframes pulse-leaf-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(101, 230, 46, 0.25), inset 0 0 10px rgba(101, 230, 46, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(101, 230, 46, 0.55), inset 0 0 20px rgba(138, 255, 66, 0.25);
+  }
+}
+
+.cuckoo-glow {
+  animation: pulse-leaf-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes sound-wave-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.18); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.wave-pulse {
+  animation: sound-wave-pulse 1.8s infinite ease-in-out;
+}
+

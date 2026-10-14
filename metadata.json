@@ -1,0 +1,10 @@
+{
+  "name": "CUCKOO VOICE AI",
+  "description": "An advanced AI-powered Speech-to-Text platform with live microphone streaming, audio file transcription, subtitle studio, smart transcript tools, and multilingual support.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
