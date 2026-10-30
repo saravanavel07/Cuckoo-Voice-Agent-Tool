@@ -1,171 +1,239 @@
 # 🐦 CUCKOO VOICE AI
-> **“Every Voice Finds Its Words.”**
-> An Advanced AI-Powered Speech-to-Text Platform
+
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-98.4%25-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/Node.js-Express-000000?style=for-the-badge&logo=node.js" alt="Express" />
+  <img src="https://img.shields.io/badge/Gemini-AI-8A2BE2?style=for-the-badge&logo=google" alt="Gemini AI" />
+</p>
+
+> “Every Voice Finds Its Words.”
+
+A live, motion-driven speech-to-text platform for real-time transcription, multilingual audio workflows, subtitle generation, and AI-powered meeting intelligence.
+
+## ✨ Overview
+
+CUCKOO VOICE AI is a modern web app that turns spoken content into polished, usable output in real time. It combines live microphone capture, audio file transcription, subtitle editing, and smart transcript tools into a single interface.
+
+Built with:
+- React 19 + TypeScript
+- Vite for frontend tooling
+- Express server for API orchestration
+- Google Gemini multimodal models for transcription and transcript intelligence
+- Browser audio APIs for live mic streaming and waveform animation
+
+## 🎙️ Core Features
+
+### Live microphone transcription
+- Real-time speech recognition from the browser microphone
+- Live waveform / audio visualization
+- Silence detection and voice activity monitoring
+- Real-time interim and final transcript updates
+
+### Audio file transcription
+- Upload MP3, WAV, WEBM, OGG, M4A, AAC, FLAC audio files
+- Supports large audio payloads with a robust backend API
+- Generates transcript text and timestamped subtitle segments
+- Preserves multilingual output, including Tamil Unicode text
+
+### Smart transcript tools
+- Auto-formatting and punctuation cleanup
+- Meeting notes extraction
+- Executive summary generation
+- Action item extraction
+- Translation support
+- Key point summarization
+
+### Subtitle studio
+- Subtitle segment editing
+- Timestamp controls for in/out cues
+- SRT and VTT export support
+- Audio-synced playback workflow
+
+### Session and privacy controls
+- Local browser persistence for saved sessions
+- Privacy-aware session handling
+- Searchable history and transcript management
 
 ---
 
-## 🌿 Project Overview
+## 🏗️ Architecture
 
-**CUCKOO VOICE AI** is a professional, high-fidelity Speech-to-Text web application combining acoustic intelligence with an organic, nature-inspired visual identity. The singing cuckoo bird forms the signature microphone emblem—symbolizing natural communication, vocal expression, and clarity.
+```text
+Frontend (React + Vite)
+  ├─ Live recorder
+  ├─ Audio visualizer
+  ├─ Transcript editor
+  ├─ Subtitle studio
+  └─ Smart tools modal
 
-The platform provides zero-latency continuous live microphone streaming, file-based audio transcription with millisecond timestamp synchronization, native **English** and authentic **Tamil (தமிழ்) Unicode** recognition, a dedicated **Subtitle Studio (SRT / VTT)**, and intelligent post-processing meeting tools.
+        │ HTTP / JSON
+        ▼
+Backend (Express + TypeScript)
+  ├─ /api/status
+  ├─ /api/transcribe
+  ├─ /api/smart-tools
+  └─ Static asset serving
 
----
-
-## 🎨 Visual Identity & Palette
-
-Crafted on a textured emerald-and-leaf palette inspired by lush forest canopies:
-
-| Color Name | Hex Code | Purpose |
-|---|---|---|
-| **Live Leaf Green** | `#65E62E` | Primary accent, reactive waveform, active glows |
-| **Fresh Lime Green** | `#8AFF42` | Highlights, badges, typography contrast |
-| **Emerald Green** | `#159447` | Secondary surfaces, borders, button gradients |
-| **Deep Forest Green** | `#082D19` | Root foundation, canvas background |
-| **Text White** | `#F4FFF1` | High-contrast readable typography |
-| **Soft Green Surface** | `#123D25` | Cards, toolbar backdrops, navigation tabs |
-
----
-
-## ✨ Key Features
-
-### 1. 🎙️ Live Microphone Streaming
-- Real-time speech recognition with continuous interim and final text.
-- Large interactive **Singing Cuckoo** microphone button with animated beak vibration and expanding sound waves.
-- **Audio Visualizer**: Sinusoidal frequency waves reacting directly to acoustic input via Web Audio API.
-- **Smart Silence Detection**: Detects prolonged silence thresholds (configurable 2s–10s) with non-intrusive status guidance.
-- **Voice Activity Detection (VAD)**: Real-time speech activity detection tags.
-
-### 2. 📂 Audio File Transcription
-- Drag-and-drop support for **MP3, WAV, WEBM, OGG, M4A, AAC, and FLAC** up to 25MB.
-- Audio playback preview with timeline and cancellation controls.
-- Automatic segment segmentation with speaker labels and confidence scoring.
-
-### 3. 🌐 Multilingual & Tamil Unicode
-- Native support for **English**, **Tamil (தமிழ்)**, Spanish, French, German, and Hindi.
-- Authentic Tamil Unicode text rendering, preserving original script without garbling or romanization.
-
-### 4. 🎬 Subtitle Studio
-- Interactive subtitle segment editor with `IN` and `OUT` timestamp accuracy.
-- **Audio-Synced Playback**: Clicking any segment seeks playback; current subtitle line highlights in real time.
-- Direct export to **.SRT (SubRip)** and **.VTT (WebVTT)**.
-
-### 5. 🧠 Smart Meeting & Text Tools
-- **Meeting Notes**: Auto-formats into Objective, Discussion Points, Decisions, and Action Items.
-- **Action Items**: Extracts actionable tasks with assignees and checkboxes.
-- **Executive Summary**: Brief summaries and key takeaways.
-- **Polish & Punctuation**: Removes filler stutters, corrects capitalization, and improves paragraph flow.
-- **Translation**: Translates transcripts between languages with authentic Tamil Unicode support.
-- **Side-by-Side Review**: Compare original transcript and AI output before applying.
-
-### 6. 🛡️ Privacy & Local Persistence
-- Stored locally via browser storage by default—no recordings are stored without user consent.
-- **Session Privacy Mode**: Toggle temporary sessions that never write to persistent storage.
-- Searchable session history with rename, quick export, and one-click deletion.
-
----
-
-## 🏛️ Architecture
-
-```
-┌────────────────────────────────────────────────────────┐
-│                   CUCKOO CLIENT (SPA)                   │
-│   React 19 + Tailwind CSS + Web Audio Analyser Node    │
-│   Web Speech API (Interim) + Canvas Reactive Waves     │
-└───────────────┬──────────────────────────┬─────────────┘
-                │                          │
-        HTTP / JSON               WebSocket / Audio
-                │                          │
-┌───────────────▼──────────────────────────▼─────────────┐
-│                 EXPRESS / FASTAPI BACKEND               │
-│         /api/transcribe      /api/smart-tools          │
-│         /api/status          Audio Pre-processing      │
-└───────────────┬──────────────────────────┬─────────────┘
-                │                          │
-┌───────────────▼───────────┐  ┌───────────▼─────────────┐
-│    Gemini Multimodal AI   │  │   Local Faster-Whisper  │
-│  (Multilingual & Audio)   │  │   (Offline CPU/GPU STT) │
-└───────────────────────────┘  └─────────────────────────┘
+        │ Gemini API
+        ▼
+AI Processing
+  ├─ Audio-to-text transcription
+  ├─ Multilingual understanding
+  ├─ Transcript refinement
+  └─ Meeting intelligence output
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm** or **pnpm**
-- Modern web browser (Chrome, Edge, Firefox, Safari) with microphone permissions enabled.
+- Node.js 18+
+- npm
+- A browser with microphone access enabled
+- A Google Gemini API key
 
-### 1. Installation
-Clone the repository and install dependencies:
+### 1) Clone the repo
+
 ```bash
-git clone https://github.com/your-org/cuckoo-voice-ai.git
-cd cuckoo-voice-ai
+git clone https://github.com/saravanavel07/Cuckoo-Voice-Agent-Tool.git
+cd Cuckoo-Voice-Agent-Tool
+```
+
+### 2) Install dependencies
+
+```bash
 npm install
 ```
 
-### 2. Environment Variables
+### 3) Configure environment
+
 Create a `.env` file in the project root:
-```bash
-cp .env.example .env
-```
-Provide your `GEMINI_API_KEY`:
-```ini
-GEMINI_API_KEY="your-gemini-api-key"
+
+```env
+GEMINI_API_KEY=your_google_gemini_api_key
 PORT=3000
 ```
 
-### 3. Run Development Server
+### 4) Run the app
+
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
+Then open:
 
-## 🐳 Docker Deployment
-
-You can containerize Cuckoo Voice AI with Docker:
-
-```bash
-# Build the Docker image
-docker build -t cuckoo-voice-ai .
-
-# Run container on port 3000
-docker run -p 3000:3000 -e GEMINI_API_KEY="your_key" cuckoo-voice-ai
-```
-
-Or using Docker Compose:
-```bash
-docker-compose up --build
+```text
+http://localhost:3000
 ```
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## 📦 Project Structure
 
-| Shortcut | Action |
-|---|---|
-| <kbd>Space</kbd> | Start / Pause live microphone recording |
-| <kbd>Ctrl + C</kbd> | Copy entire transcript text |
-| <kbd>Ctrl + F</kbd> | Open in-editor search bar |
-| <kbd>Ctrl + Z</kbd> | Undo transcript edit |
-| <kbd>Ctrl + Y</kbd> | Redo transcript edit |
-| <kbd>Ctrl + E</kbd> | Open Export dialog (TXT, SRT, VTT, JSON, MD) |
-| <kbd>Ctrl + S</kbd> | Open Smart Meeting Tools modal |
-| <kbd>Esc</kbd> | Close active modal |
+```text
+Cuckoo-Voice-Agent-Tool/
+├── src/
+│   ├── components/
+│   ├── utils/
+│   ├── types/
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── tests/
+├── docs/
+├── server.ts
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── requirements.txt
+├── docker-compose.yml
+├── index.html
+├── metadata.json
+├── LICENSE
+├── CONTRIBUTING.md
+├── README.md
+└── .github/
+```
 
 ---
 
-## 🧪 Testing
+## 🔌 API Endpoints
 
-Automated test suites verify subtitle time formatting, VTT/SRT syntax generation, and schema validation:
+### `GET /api/status`
+Returns app metadata, supported languages, and product status information.
+
+### `POST /api/transcribe`
+Accepts audio payloads and returns:
+- transcript text
+- detected language
+- duration estimate
+- subtitle-like segment array
+
+### `POST /api/smart-tools`
+Performs transcript enhancement tasks such as:
+- punctuation
+- summary
+- action_items
+- meeting_notes
+- key_points
+- translate
+
+---
+
+## 🧪 Running Tests
+
 ```bash
 npm test
 ```
 
 ---
 
+## 🐳 Docker
+
+### Docker Compose
+
+```bash
+docker-compose up --build
+```
+
+### Manual Docker
+
+```bash
+docker build -t cuckoo-voice-ai .
+docker run -p 3000:3000 -e GEMINI_API_KEY="your_key" cuckoo-voice-ai
+```
+
+---
+
+## 🔐 Environment Variables
+
+| Variable | Required | Description |
+|---|---:|---|
+| `GEMINI_API_KEY` | Yes | API key used for Gemini-powered transcription and AI tools |
+| `PORT` | No | Server port (default: `3000`) |
+
+---
+
 ## 📄 License
-Released under the [Apache 2.0 License](LICENSE).
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+---
+
+## 🌱 Notes
+
+This repository is designed for voice-first workflows and is especially suited for:
+- interview transcription
+- meetings and notes
+- multilingual subtitle generation
+- voice-driven productivity workflows
+
+If you want, I can also create a second version of this README with a more premium product-style layout, a darker neon UI theme, or a GitHub landing-page style version.
