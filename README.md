@@ -1,19 +1,25 @@
+<div align="center">
+
 # 🐦 CUCKOO VOICE AI
 
-<p align="center">
+<a href="https://readme-typing-svg.demolab.com"><img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=28&pause=1000&color=7C5CFC&center=true&vCenter=true&width=820&lines=Every+Voice+Finds+Its+Words.;Live+transcription.+Real-time+insight.;Speak+in.+Clarity+out." alt="Animated Cuckoo Voice AI tagline" /></a>
+
+<p>
   <img src="https://img.shields.io/badge/TypeScript-98.4%25-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
   <img src="https://img.shields.io/badge/Node.js-Express-000000?style=for-the-badge&logo=node.js" alt="Express" />
   <img src="https://img.shields.io/badge/Gemini-AI-8A2BE2?style=for-the-badge&logo=google" alt="Gemini AI" />
 </p>
 
-> “Every Voice Finds Its Words.”
+**A live, motion-driven speech-to-text platform** for real-time transcription, multilingual audio workflows, subtitle generation, and AI-powered meeting intelligence.
 
-A live, motion-driven speech-to-text platform for real-time transcription, multilingual audio workflows, subtitle generation, and AI-powered meeting intelligence.
+</div>
+
+---
 
 ## ✨ Overview
 
-CUCKOO VOICE AI is a modern web app that turns spoken content into polished, usable output in real time. It combines live microphone capture, audio file transcription, subtitle editing, and smart transcript tools into a single interface.
+CUCKOO VOICE AI turns spoken content into polished, usable output in real time. Capture speech from your microphone or upload an audio file, refine transcripts with AI, and create synchronized subtitles—all in one voice-first workspace.
 
 Built with:
 - React 19 + TypeScript
@@ -31,7 +37,7 @@ Built with:
 - Real-time interim and final transcript updates
 
 ### Audio file transcription
-- Upload MP3, WAV, WEBM, OGG, M4A, AAC, FLAC audio files
+- Upload MP3, WAV, WEBM, OGG, M4A, AAC, and FLAC audio files
 - Supports large audio payloads with a robust backend API
 - Generates transcript text and timestamped subtitle segments
 - Preserves multilingual output, including Tamil Unicode text
@@ -94,20 +100,20 @@ AI Processing
 - A browser with microphone access enabled
 - A Google Gemini API key
 
-### 1) Clone the repo
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/saravanavel07/Cuckoo-Voice-Agent-Tool.git
 cd Cuckoo-Voice-Agent-Tool
 ```
 
-### 2) Install dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3) Configure environment
+### 3. Configure environment
 
 Create a `.env` file in the project root:
 
@@ -116,17 +122,13 @@ GEMINI_API_KEY=your_google_gemini_api_key
 PORT=3000
 ```
 
-### 4) Run the app
+### 4. Run the app
 
 ```bash
 npm run dev
 ```
 
-Then open:
-
-```text
-http://localhost:3000
-```
+Then open <http://localhost:3000>.
 
 ---
 
@@ -166,19 +168,19 @@ Returns app metadata, supported languages, and product status information.
 
 ### `POST /api/transcribe`
 Accepts audio payloads and returns:
-- transcript text
-- detected language
-- duration estimate
-- subtitle-like segment array
+- Transcript text
+- Detected language
+- Duration estimate
+- Subtitle-like segment array
 
 ### `POST /api/smart-tools`
 Performs transcript enhancement tasks such as:
-- punctuation
-- summary
-- action_items
-- meeting_notes
-- key_points
-- translate
+- `punctuation`
+- `summary`
+- `action_items`
+- `meeting_notes`
+- `key_points`
+- `translate`
 
 ---
 
@@ -231,9 +233,7 @@ Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for con
 ## 🌱 Notes
 
 This repository is designed for voice-first workflows and is especially suited for:
-- interview transcription
-- meetings and notes
-- multilingual subtitle generation
-- voice-driven productivity workflows
-
-If you want, I can also create a second version of this README with a more premium product-style layout, a darker neon UI theme, or a GitHub landing-page style version.
+- Interview transcription
+- Meetings and notes
+- Multilingual subtitle generation
+- Voice-driven productivity workflows
